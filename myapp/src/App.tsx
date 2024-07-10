@@ -5,7 +5,7 @@ import Authentcation from "./Components/Authentication/Authentcation";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App d-flex">
       <h1>Log in Form</h1>
       <Authentcation />
     </div>
