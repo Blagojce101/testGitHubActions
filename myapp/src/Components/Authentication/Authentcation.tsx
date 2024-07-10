@@ -4,13 +4,23 @@ const Authentcation = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
-  const handleSubmit = () => {
-    const newUser = {
-      email,
-      password,
-    };
+  const resetInputs = () => {
+    if (email && password) {
+      setEmail("");
+      setPassword("");
+    }
+  };
 
-    console.log(newUser);
+  const handleSubmit = () => {
+    if (email && password) {
+      const newUser = {
+        email,
+        password,
+      };
+      console.log(newUser);
+    } else {
+      console.log("email:", email, "password:", password);
+    }
   };
 
   return (
@@ -18,6 +28,7 @@ const Authentcation = () => {
       onSubmit={(event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         handleSubmit();
+        resetInputs();
       }}>
       <input
         type="email"
